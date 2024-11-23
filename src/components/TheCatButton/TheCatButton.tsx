@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Meows } from "./Meows";
 
 export const TheCatButton = () => {
   const [showText, setShowText] = useState({ show: false, nextText: 0 });
-  const timerRef = useRef<null | NodeJS.Timeout>(null);
+  const timerRef = useRef<null | NodeJS.Timeout>(null); // Use a ref to track the timer
 
   const onClick = () => {
     // Clear any existing timer to prevent overlap
@@ -11,13 +11,13 @@ export const TheCatButton = () => {
       clearTimeout(timerRef.current);
     }
 
-    if (showText.nextText === 4) {
-      setShowText({ show: true, nextText: 0 });
-    }
-    setShowText((state) => ({
-      ...state,
-      show: true,
-    }));
+    setShowText((state) => {
+      const nextIndex = state.nextText === 3 ? 0 : state.nextText + 1; // Reset to 0 after the last text
+      return {
+        nextText: nextIndex,
+        show: true,
+      };
+    });
 
     timerRef.current = setTimeout(() => {
       setShowText((state) => ({
@@ -25,9 +25,17 @@ export const TheCatButton = () => {
         show: false,
       }));
 
-      timerRef.current = null; // Clean up timer reference
+      timerRef.current = null; // Clean up the timer reference
     }, 500);
   };
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative w-full">
