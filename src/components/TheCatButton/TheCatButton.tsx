@@ -33,27 +33,27 @@ export const TheCatButton = () => {
     <div className="relative w-full">
       <Meows
         show={showText.nextText === 0 && showText.show}
-        positionStyling="-right-20 rotate-12"
+        positionStyling="-right-16 rotate-12 sm:-right-20"
         meowText="Meow!"
       />
       <Meows
         show={showText.nextText === 1 && showText.show}
-        positionStyling="-left-20 -rotate-12"
+        positionStyling="-left-16 -rotate-12 sm:-left-20 sm:-rotate-12"
         meowText="Meow!"
       />
       <Meows
         show={showText.nextText === 2 && showText.show}
-        positionStyling="right-60 bottom-14 -rotate-6"
+        positionStyling="right-56 bottom-10 sm:right-60 sm:bottom-12 -rotate-6"
         meowText="Prrrrrrr!!!"
       />
       <Meows
         show={showText.nextText === 3 && showText.show}
-        positionStyling="left-24 bottom-14 rotate-6"
+        positionStyling="left-24 bottom-10 sm:bottom-12 rotate-6"
         meowText="Hissssss!!!"
       />
       <button
         onClick={onClick}
-        className="w-full py-1 text-primary font-display font-semibold text-3xl border-4 rounded-md border-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
+        className="w-full text-primary font-display font-semibold text-2xl sm:text-3xl sm:py-1 border-4 rounded-md border-primary cursor-pointer active:bg-primary active:text-white transition-all"
       >
         The Cat Button
       </button>
