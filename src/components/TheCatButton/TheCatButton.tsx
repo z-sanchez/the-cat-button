@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Meows } from "./Meows";
 
 export const TheCatButton = () => {
   const [showText, setShowText] = useState({ show: false, nextText: 0 });
@@ -30,34 +31,26 @@ export const TheCatButton = () => {
 
   return (
     <div className="relative w-full">
-      <p
-        className={`font-display text-2xl font-semibold absolute -right-20 rotate-12 transition-all ${
-          showText.nextText === 0 && showText.show ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        Meow!
-      </p>
-      <p
-        className={`font-display text-2xl font-semibold absolute -left-20 -rotate-12 transition-all ${
-          showText.nextText === 1 && showText.show ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        Meow!
-      </p>
-      <p
-        className={`font-display text-2xl font-semibold absolute right-60 bottom-14 -rotate-6 transition-all ${
-          showText.nextText === 2 && showText.show ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        Prrrrrrr!!!
-      </p>
-      <p
-        className={`font-display text-2xl font-semibold absolute left-24 bottom-14 rotate-6 transition-all ${
-          showText.nextText === 3 && showText.show ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        Hissssss!!!
-      </p>
+      <Meows
+        show={showText.nextText === 0 && showText.show}
+        positionStyling="-right-20 rotate-12"
+        meowText="Meow!"
+      />
+      <Meows
+        show={showText.nextText === 1 && showText.show}
+        positionStyling="-left-20 -rotate-12"
+        meowText="Meow!"
+      />
+      <Meows
+        show={showText.nextText === 2 && showText.show}
+        positionStyling="right-60 bottom-14 -rotate-6"
+        meowText="Prrrrrrr!!!"
+      />
+      <Meows
+        show={showText.nextText === 3 && showText.show}
+        positionStyling="left-24 bottom-14 rotate-6"
+        meowText="Hissssss!!!"
+      />
       <button
         onClick={onClick}
         className="w-full py-1 text-primary font-display font-semibold text-3xl border-4 rounded-md border-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
