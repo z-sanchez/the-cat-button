@@ -21,7 +21,7 @@ export const TheCatButton = () => {
 
     timerRef.current = setTimeout(() => {
       setShowText((state) => ({
-        nextText: state.nextText + 1,
+        ...state,
         show: false,
       }));
 
