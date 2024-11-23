@@ -3,6 +3,7 @@ import { Meows } from "./Meows";
 
 export const TheCatButton = () => {
   const [showText, setShowText] = useState({ show: false, nextText: 0 });
+  const [showHintText, setShowHintText] = useState(true);
   const timerRef = useRef<null | NodeJS.Timeout>(null); // Use a ref to track the timer
 
   const onClick = () => {
@@ -51,20 +52,30 @@ export const TheCatButton = () => {
       />
       <Meows
         show={showText.nextText === 2 && showText.show}
-        positionStyling="right-56 bottom-10 sm:right-60 sm:bottom-12 -rotate-6"
+        positionStyling="right-56 bottom-14 sm:right-60 sm:bottom-20 -rotate-6"
         meowText="Prrrrrrr!!!"
       />
       <Meows
         show={showText.nextText === 3 && showText.show}
-        positionStyling="left-24 bottom-10 sm:bottom-12 rotate-6"
+        positionStyling="left-24 bottom-14 sm:bottom-20 rotate-6"
         meowText="Hissssss!!!"
       />
       <button
-        onClick={onClick}
+        onClick={() => {
+          onClick();
+          setShowHintText(false);
+        }}
         className="w-full text-primary font-display font-semibold text-2xl sm:text-3xl sm:py-1 border-4 rounded-md border-primary cursor-pointer active:bg-primary active:text-white transition-all"
       >
         The Cat Button
       </button>
+      <p
+        className={`text-center text-sm text-gray-500 font-light font-display transition-all ${
+          showHintText ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        Press the button!
+      </p>
     </div>
   );
 };
