@@ -12,8 +12,6 @@ node_modules
 dist-ssr
 *.local
 .env
-tsconfig.node.tsbuildinfo
-tsconfig.app.tsbuildinfo
 
 
 # Editor directories and files
@@ -26,3 +24,5 @@ tsconfig.app.tsbuildinfo
 *.njsproj
 *.sln
 *.sw?
+*.tsbuildinfo
+*.tsbuildinfo
