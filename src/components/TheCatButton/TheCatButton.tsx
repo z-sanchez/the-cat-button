@@ -4,7 +4,8 @@ import { Meows } from "./Meows";
 export const TheCatButton = () => {
   const [showText, setShowText] = useState({ show: false, nextText: 0 });
   const [showHintText, setShowHintText] = useState(true);
-  const timerRef = useRef<null | NodeJS.Timeout>(null); // Use a ref to track the timer
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const timerRef = useRef<any>(null); // Use a ref to track the timer
 
   const onClick = () => {
     // Clear any existing timer to prevent overlap
@@ -43,7 +44,7 @@ export const TheCatButton = () => {
       <Meows
         show={showText.nextText === 0 && showText.show}
         positionStyling="-right-16 rotate-12 sm:-right-20"
-        meowText="Meow!"
+        meowText="Purr!"
       />
       <Meows
         show={showText.nextText === 1 && showText.show}
