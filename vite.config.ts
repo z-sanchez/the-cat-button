@@ -8,6 +8,15 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: "auto",
+      workbox: {
+        clientsClaim: true,
+        skipWaiting: true,
+      },
+      devOptions: {
+        enabled: true, // Enable in development
+      },
+
       manifest: {
         name: "The Cat Button",
         short_name: "The Cat Button",
