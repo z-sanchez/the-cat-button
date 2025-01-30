@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/the-cat-button-logo.svg"
+    "generate-pwa-assets": "pwa-assets-generator"
   },
   "dependencies": {
     "@apollo/client": "^3.9.7",
