@@ -10,7 +10,7 @@ export const usePwaServiceWorker = () => {
         if (registration) {
           setInterval(() => {
             registration.update();
-          }, 30000);
+          }, import.meta.env.VITE_UPDATE_SERVICE_WORKER_POLL * 60 * 1000);
         }
       },
       onNeedRefresh() {
