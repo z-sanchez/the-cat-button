@@ -16,7 +16,6 @@ export default defineConfig({
       devOptions: {
         enabled: true, // Enable in development
       },
-
       manifest: {
         name: "The Cat Button",
         short_name: "The Cat Button",
