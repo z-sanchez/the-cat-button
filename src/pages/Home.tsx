@@ -6,29 +6,27 @@ export const HomePage = () => {
     <GenericPage>
       <div className="w-full h-full flex justify-end items-center flex-col">
         <div className="flex w-full items-center rounded-md shadow-lg flex-col my-auto">
-          <div className="w-full h-[200px]">
+          <div className="w-[400px] h-[250px]">
             <img
-              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              className="w-full h-full object-scale-down object-center rounded-md"
+              src="https://plus.unsplash.com/premium_photo-1677101221533-52b45823a2dc?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              className="w-full h-full object-contain object-center rounded-md"
             />
           </div>
           <div className="px-2 py-2 mx-2 mt-4 bg-gray-50 rounded-md">
             <p className="text-2xl font-semibold text-primary">
-              Duke Meowington
+              Sir Whiskerbottom the Third 🐱🎩
             </p>
             <p>Age: 9 Years</p>
-            <p>Occupation: Senior Nap Consultant</p>
-            <p>Hobby: Box Sitting</p>
-            <p>Origin: Tokyo Fish Market</p>
+            <p>Occupation: Senior Nap Consultant 😴</p>
+            <p>Hobby: Collecting shiny trinkets ✨</p>
+            <p>Origin: Meowsterdam</p>
             <div className="mt-2 bg-white rounded-md px-4 py-2">
               <p className="text-lg font-semibold text-black">Backstory</p>
               <p className="text-gray-700">
-                Duke Meowington is a aristocratic 9-year-old feline who
-                discovered their true calling as a senior nap consultant after a
-                chance encounter in the Tokyo Fish Market. When not pursuing
-                their professional duties, they can be found enjoying box
-                sitting or savoring their favorite dish: free-range mouse
-                morsels.
+                Sir Whiskerbottom III was once the esteemed feline of an
+                eccentric scholar who lived in a towering library. Over the
+                years, he developed a taste for fine literature (mostly sleeping
+                on open books) and a talent for finding the coziest sunspots.
               </p>
             </div>
           </div>
