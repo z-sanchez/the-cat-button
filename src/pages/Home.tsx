@@ -4,7 +4,7 @@ import { GenericPage } from "../layout/GenericPage";
 export const HomePage = () => {
   return (
     <GenericPage>
-      <div className="w-full h-full flex justify-between items-center flex-col">
+      <div className="w-full h-full flex justify-end items-center flex-col">
         <div className="flex w-full items-center rounded-md shadow-lg flex-col my-auto">
           <div className="w-full h-[200px]">
             <img
@@ -23,10 +23,12 @@ export const HomePage = () => {
             <div className="mt-2 bg-white rounded-md px-4 py-2">
               <p className="text-lg font-semibold text-black">Backstory</p>
               <p className="text-gray-700">
-                Duke Meowington is a aristocratic 9-year-old senior nap
-                consultant When not pursuing their professional duties, they can
-                be found enjoying box sitting or savoring their favorite dish:
-                free-range mouse morsels.
+                Duke Meowington is a aristocratic 9-year-old feline who
+                discovered their true calling as a senior nap consultant after a
+                chance encounter in the Tokyo Fish Market. When not pursuing
+                their professional duties, they can be found enjoying box
+                sitting or savoring their favorite dish: free-range mouse
+                morsels.
               </p>
             </div>
           </div>
@@ -36,7 +38,7 @@ export const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className="w-3/4 mt-auto">
+        <div className="w-3/4 ">
           <TheCatButton />
         </div>
       </div>
