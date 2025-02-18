@@ -12,15 +12,15 @@ export const HomePage = () => {
               className="w-full h-full object-contain object-center rounded-md"
             />
           </div>
-          <div className="px-2 py-2 mx-2 mt-4 bg-gray-50 rounded-md text-sm">
-            <p className="text-xl font-semibold text-primary">
+          <div className="px-2 mx-2 mt-4 py-2 bg-gray-50 rounded-md text-sm">
+            <p className="text-xl  font-semibold text-primary">
               Sir Whiskerbottom the Third 🐱🎩
             </p>
             <p>Age: 9 Years</p>
             <p>Occupation: Senior Nap Consultant 😴</p>
             <p>Hobby: Collecting shiny trinkets ✨</p>
             <p>Origin: Meowsterdam</p>
-            <div className="mt-2 bg-white rounded-md px-4 py-2">
+            <div className="mt-2 bg-white rounded-md px-4 ">
               <p className="text-lg font-semibold text-black">Backstory</p>
               <p className="text-gray-700 text-sm">
                 Sir Whiskerbottom III was once the esteemed feline of an
@@ -30,7 +30,7 @@ export const HomePage = () => {
               </p>
             </div>
           </div>
-          <div className="my-5">
+          <div className="my-4">
             <button className="outline-1 outline-primary outline px-4 text-primary rounded-md hover:bg-primary hover:text-white transition-all">
               Save To Favorites
             </button>
