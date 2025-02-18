@@ -13,7 +13,7 @@ export const HomePage = () => {
             />
           </div>
           <div className="px-2 py-2 mx-2 mt-4 bg-gray-50 rounded-md text-sm">
-            <p className="text-2xl font-semibold text-primary">
+            <p className="text-xl font-semibold text-primary">
               Sir Whiskerbottom the Third 🐱🎩
             </p>
             <p>Age: 9 Years</p>
