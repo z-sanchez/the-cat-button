@@ -4,15 +4,15 @@ import { GenericPage } from "../layout/GenericPage";
 export const HomePage = () => {
   return (
     <GenericPage>
-      <div className="w-full flex justify-center flex-col">
+      <div className="w-full flex justify-between items-center flex-col mt-2">
         <div className="flex w-full items-center rounded-md shadow-lg flex-col">
-          <div className="w-full h-[280px]">
+          <div className="w-full h-[250px]">
             <img
               src="https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              className="w-full h-full  object-scale-down object-center rounded-md px-3"
+              className="w-full h-full object-scale-down object-center rounded-md"
             />
           </div>
-          <div className="mt-5 mx-3 bg-gray-50 px-6 py-2 rounded-md">
+          <div className="px-2 py-2 mx-2 mt-4 bg-gray-50 rounded-md">
             <p className="text-2xl font-semibold text-primary">
               Duke Meowington
             </p>
@@ -20,7 +20,7 @@ export const HomePage = () => {
             <p>Occupation: Senior Nap Consultant</p>
             <p>Hobby: Box Sitting</p>
             <p>Origin: Tokyo Fish Market</p>
-            <div className="mt-2 bg-white px-4 py-2">
+            <div className="mt-2 bg-white rounded-md px-4 py-2">
               <p className="text-lg font-semibold text-black">Backstory</p>
               <p className="text-gray-700">
                 Duke Meowington is a aristocratic 9-year-old feline who
@@ -38,9 +38,9 @@ export const HomePage = () => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="w-3/4 mx-auto mt-8">
-        <TheCatButton />
+        <div className="w-3/4 mt-10">
+          <TheCatButton />
+        </div>
       </div>
     </GenericPage>
   );
