@@ -55,9 +55,14 @@ export const HomePage = () => {
               </p>
             </div>
           </div>
-          <div className="my-4 flex items-center self-start mx-5">
-            <CiHeart fill="#ef4444" className="h-5 w-5" />
-            <p className="px-2 text-sm">Save to Favorites</p>
+          <div className="my-4 px-5 flex justify-between w-full text-sm">
+            <div className=" flex items-center ">
+              <CiHeart fill="#ef4444" className="h-5 w-5" />
+              <p className="px-2 text-sm">Save to Favorites</p>
+            </div>
+            <div className="rounded-md px-3 py-1 bg-yellow-400  text-white flex items-center ">
+              <p>Common</p>
+            </div>
           </div>
         </div>
         <div className="w-3/4 ">
