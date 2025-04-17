@@ -46,7 +46,7 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 ### Week 1: Frontend Setup
 
-- [ ] Vite + Tailwind + Zustand + TypeScript scaffold
+- [x] Vite + Tailwind + Zustand + TypeScript scaffold
 - [ ] Home UI with Cat Button
 - [ ] Zustand store for `currentCat` and `savedCats`
 - [ ] Save cats to localStorage
@@ -83,7 +83,7 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 ---
 
-### Week 5–6: Authentication
+### Week 5-6: Authentication
 
 - [ ] Implement JWT login/signup
 - [ ] Hash passwords (bcrypt)
