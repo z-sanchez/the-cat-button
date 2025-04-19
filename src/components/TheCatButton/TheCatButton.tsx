@@ -66,9 +66,10 @@ export const TheCatButton = () => {
           onClick();
           setShowHintText(false);
         }}
-        className="w-full text-primary font-display font-semibold text-2xl sm:text-3xl sm:py-1 border-4 rounded-md border-primary cursor-pointer active:bg-primary active:text-white transition-all"
+        className="w-full text-white font-display sm:text-3xl sm:py-1 border-4 py-1 rounded-2xl border-primary cursor-pointer
+        bg-primary active:bg-primary active:text-white transition-all"
       >
-        The Cat Button
+        Another Cat!
       </button>
       <p
         className={`text-center text-sm text-gray-500 font-light font-display transition-all ${
