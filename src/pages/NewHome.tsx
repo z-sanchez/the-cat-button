@@ -26,7 +26,7 @@ export const NewHomePage = () => {
         </div>
       </div>
       <motion.div
-        className="h-5/6 w-full flex items-center flex-col z-10"
+        className="h-4/5 w-full flex items-center flex-col z-10"
         onTap={() => setExpanded((prev) => !prev)}
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
