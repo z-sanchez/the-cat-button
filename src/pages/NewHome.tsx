@@ -14,7 +14,7 @@ export const NewHomePage = () => {
   const { imageSource, name, age, occupation, hobby, origin, backstory } =
     mockedCats.cats[0];
 
-  const animateY = "-80%";
+  const animateY = "-70%";
   const type = "spring";
   const bounce = 0;
 
@@ -26,12 +26,16 @@ export const NewHomePage = () => {
         </div>
       </div>
       <motion.div
-        className=" w-full h-5/6 flex items-center flex-col z-10"
+        className="h-screen w-full flex items-center flex-col z-10"
         onTap={() => setExpanded((prev) => !prev)}
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
-        <div className="w-11/12 h-full relative">
+        <div
+          className={`w-11/12 ${
+            expanded ? "h-4/5" : "h-4/6"
+          } relative transition-all ease-in-out`}
+        >
           <img src={imageSource} className="rounded-md h-full object-cover" />
           <p className="absolute bottom-2 right-2 rounded-md px-3 py-1 font-medium bg-yellow-400  text-white">
             Common
@@ -47,7 +51,7 @@ export const NewHomePage = () => {
           expanded ? "opacity-100" : ""
         }`}
         onTap={() => setExpanded(false)}
-        animate={{ y: expanded ? "-60%" : "0%" }}
+        animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
         <div className="w-full flex justify-center flex-col px-2">
