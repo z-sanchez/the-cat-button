@@ -20,6 +20,11 @@ export const NewHomePage = () => {
 
   return (
     <GenericPage>
+      <div className="w-full relative z-50 top-[90%]">
+        <div className="w-full absolute top-full">
+          <TheCatButton />
+        </div>
+      </div>
       <motion.div
         className=" w-full h-5/6 flex items-center flex-col z-10"
         onTap={() => setExpanded((prev) => !prev)}
@@ -37,15 +42,12 @@ export const NewHomePage = () => {
           <LuCrown stroke="#a28adf" className="h-5 w-5" />
         </div>
       </motion.div>
-      <div className="absolute bottom-10 w-11/12 z-20">
-        <TheCatButton />
-      </div>
       <motion.div
         className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out ${
           expanded ? "opacity-100" : ""
         }`}
         onTap={() => setExpanded(false)}
-        animate={{ y: expanded ? "-55%" : "0%" }}
+        animate={{ y: expanded ? "-60%" : "0%" }}
         transition={{ type, bounce }}
       >
         <div className="w-full flex justify-center flex-col px-2">
