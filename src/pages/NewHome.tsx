@@ -26,16 +26,12 @@ export const NewHomePage = () => {
         </div>
       </div>
       <motion.div
-        className="h-screen w-full flex items-center flex-col z-10"
+        className="h-5/6 w-full flex items-center flex-col z-10"
         onTap={() => setExpanded((prev) => !prev)}
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
-        <div
-          className={`w-11/12 ${
-            expanded ? "h-4/5" : "h-4/6"
-          } relative transition-all ease-in-out`}
-        >
+        <div className={`w-11/12 h-full relative transition-all ease-in-out`}>
           <img src={imageSource} className="rounded-md h-full object-cover" />
           <p className="absolute bottom-2 right-2 rounded-md px-3 py-1 font-medium bg-yellow-400  text-white">
             Common
@@ -47,7 +43,7 @@ export const NewHomePage = () => {
         </div>
       </motion.div>
       <motion.div
-        className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out ${
+        className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out  mt-40 ${
           expanded ? "opacity-100" : ""
         }`}
         onTap={() => setExpanded(false)}
