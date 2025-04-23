@@ -21,12 +21,12 @@ export const NewHomePage = () => {
   return (
     <GenericPage>
       <motion.div
-        className=" w-full h-full flex items-center flex-col z-10"
+        className=" w-full h-5/6 flex items-center flex-col z-10"
         onTap={() => setExpanded((prev) => !prev)}
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
-        <div className="w-11/12 h-3/4 relative">
+        <div className="w-11/12 h-full relative">
           <img src={imageSource} className="rounded-md h-full object-cover" />
           <p className="absolute bottom-2 right-2 rounded-md px-3 py-1 font-medium bg-yellow-400  text-white">
             Common
@@ -37,15 +37,15 @@ export const NewHomePage = () => {
           <LuCrown stroke="#a28adf" className="h-5 w-5" />
         </div>
       </motion.div>
-
-      <div className="absolute bottom-0 w-11/12 z-20">
+      <div className="absolute bottom-10 w-11/12 z-20">
         <TheCatButton />
       </div>
-
       <motion.div
-        className="h-screen w-full z-10 mt-10"
+        className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out ${
+          expanded ? "opacity-100" : ""
+        }`}
         onTap={() => setExpanded(false)}
-        animate={{ y: expanded ? animateY : "0%" }}
+        animate={{ y: expanded ? "-55%" : "0%" }}
         transition={{ type, bounce }}
       >
         <div className="w-full flex justify-center flex-col px-2">
@@ -76,8 +76,8 @@ export const NewHomePage = () => {
             <p className="text-gray-700 text-sm">{backstory}</p>
           </div>
         </div>
-        <div className="my-4 px-5 flex justify-between w-full text-sm">
-          <div className=" flex items-center ">
+        <div className="my-4 px-2 flex justify-between w-full text-sm">
+          <div className="flex items-center ">
             <CiHeart fill="#ef4444" className="h-6 w-6" />
             <p className="px-2 font-semibold">Save to Favorites</p>
           </div>
