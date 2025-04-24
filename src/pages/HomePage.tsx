@@ -1,18 +1,23 @@
 import { TheCatButton } from "../components/TheCatButton";
 import { GenericPage } from "../layout/GenericPage";
 import { LuCrown } from "react-icons/lu";
-import { CiClock1, CiHeart } from "react-icons/ci";
+import { CiClock1 } from "react-icons/ci";
 import { LiaSuitcaseSolid } from "react-icons/lia";
+import { FaHeart } from "react-icons/fa";
 import { IoBookOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import mockedCats from "../mockData/cats.json";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { Cat } from "../types/Cat";
+import { UseCatStore } from "../state/useCatsStore";
 
 export const Homepage = () => {
+  const { addCat, cats, removeCat } = UseCatStore((state) => state);
   const [expanded, setExpanded] = useState(false);
-  const { imageSource, name, age, occupation, hobby, origin, backstory } =
-    mockedCats.cats[0];
+  const cat = mockedCats.cats[0] as Cat;
+  const { imageSource, name, age, occupation, hobby, origin, backstory } = cat;
+  const isCatInStorage = cats.some(({ id }) => id === cat.id);
 
   const animateY = "-50%";
   const type = "spring";
@@ -20,6 +25,9 @@ export const Homepage = () => {
 
   return (
     <GenericPage>
+      <div className="mb-4 flex justify-end mx-2">
+        <span className="ml-auto">Saved Cats</span>
+      </div>
       <div className="w-full relative z-50 top-[90%]">
         <div className="w-full absolute top-full">
           <TheCatButton />
@@ -48,7 +56,10 @@ export const Homepage = () => {
         className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out ${
           expanded ? "opacity-100" : ""
         }`}
-        onTap={() => setExpanded(false)}
+        // onTap={() => setExpanded(false)}
+        onPanEnd={(_, info) => {
+          if (info.offset.y < -100) setExpanded(true); // swipe up
+        }}
         animate={{ y: expanded ? "-70%" : "0%" }}
         transition={{ type, bounce }}
       >
@@ -81,9 +92,26 @@ export const Homepage = () => {
           </div>
         </div>
         <div className="my-4 px-2 flex justify-between w-full text-sm">
-          <div className="flex items-center ">
-            <CiHeart fill="#ef4444" className="h-6 w-6" />
-            <p className="px-2 font-semibold">Save to Favorites</p>
+          <div
+            className="flex items-center justify-center"
+            onClick={() => {
+              if (isCatInStorage) {
+                removeCat(cat.id);
+                return;
+              }
+              addCat(cat);
+            }}
+          >
+            <FaHeart
+              fill={isCatInStorage ? "#ef4444" : "white"}
+              className={
+                "h-4 w-6 stroke-[50] stroke-red-500 transition-all ease-in-out duration-500"
+              }
+            />
+
+            <p className="px-2 font-semibold">
+              Save{isCatInStorage ? "d" : ""} to Favorites
+            </p>
           </div>
         </div>
       </motion.div>
