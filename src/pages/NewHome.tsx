@@ -14,7 +14,7 @@ export const NewHomePage = () => {
   const { imageSource, name, age, occupation, hobby, origin, backstory } =
     mockedCats.cats[0];
 
-  const animateY = "-70%";
+  const animateY = "-50%";
   const type = "spring";
   const bounce = 0;
 
@@ -26,28 +26,30 @@ export const NewHomePage = () => {
         </div>
       </div>
       <motion.div
-        className="h-4/5 w-full flex items-center flex-col z-10"
+        className="h-screen w-full flex items-center flex-col z-10"
         onTap={() => setExpanded((prev) => !prev)}
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
         <div className={`w-11/12 h-full relative transition-all ease-in-out`}>
-          <img src={imageSource} className="rounded-md h-full object-cover" />
-          <p className="absolute bottom-2 right-2 rounded-md px-3 py-1 font-medium bg-yellow-400  text-white">
-            Common
-          </p>
-        </div>
-        <div className="flex items-center flex-col mt-10">
-          <p className="text-xl font-semibold text-primary px-2">{name}</p>
-          <LuCrown stroke="#a28adf" className="h-5 w-5" />
+          <div className="relative h-4/6">
+            <img src={imageSource} className="rounded-md h-full object-cover" />
+            <p className="absolute bottom-2 right-2 rounded-md px-3 py-1 font-medium bg-yellow-400  text-white">
+              Common
+            </p>
+          </div>
+          <div className="flex items-center flex-col mt-10">
+            <p className="text-xl font-semibold text-primary px-2">{name}</p>
+            <LuCrown stroke="#a28adf" className="h-5 w-5" />
+          </div>
         </div>
       </motion.div>
       <motion.div
-        className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out  mt-40 ${
+        className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out ${
           expanded ? "opacity-100" : ""
         }`}
         onTap={() => setExpanded(false)}
-        animate={{ y: expanded ? animateY : "0%" }}
+        animate={{ y: expanded ? "-70%" : "0%" }}
         transition={{ type, bounce }}
       >
         <div className="w-full flex justify-center flex-col px-2">
