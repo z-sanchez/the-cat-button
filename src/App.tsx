@@ -1,13 +1,12 @@
 import "./App.css";
 import { usePwaServiceWorker } from "./hooks/usePwa";
 // import { ConstructionPage } from "./pages/ConstructionPage";
-// import { HomePage } from "./pages/Home";
-import { NewHomePage } from "./pages/NewHome";
+import { Homepage } from "./pages/HomePage";
 
 function App() {
   usePwaServiceWorker();
 
-  return <NewHomePage />;
+  return <Homepage />;
   // return <ConstructionPage />;
 }
 

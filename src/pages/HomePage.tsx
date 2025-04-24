@@ -9,7 +9,7 @@ import mockedCats from "../mockData/cats.json";
 import { motion } from "motion/react";
 import { useState } from "react";
 
-export const NewHomePage = () => {
+export const Homepage = () => {
   const [expanded, setExpanded] = useState(false);
   const { imageSource, name, age, occupation, hobby, origin, backstory } =
     mockedCats.cats[0];
