@@ -13,7 +13,7 @@ export const CollectionPage = () => {
           <IoMdArrowRoundBack className="w-6 h-6" fill="black" />
         </Link>
       </div>
-      <div className="w-11/12 mx-auto flex outline-red-200 outline flex-row flex-wrap gap-5">
+      <div className="w-11/12 mx-auto flex flex-row flex-wrap gap-5">
         {cats.map((cat) => {
           return (
             <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
