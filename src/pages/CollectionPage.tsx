@@ -16,63 +16,17 @@ export const CollectionPage = () => {
       <div className="w-11/12 mx-auto flex flex-row flex-wrap gap-5">
         {cats.map((cat) => {
           return (
-            <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
+            <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]" key={cat.id}>
               <img
                 src={cat.imageSource}
-                className="rounded-md h-full object-cover"
+                className="rounded-md h-full w-full object-cover"
               />
             </div>
           );
         })}
-
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
-        <div className="h-56 mb-4 flex-[0_1_calc(50%-10px)]">
-          <img
-            src={cats[0].imageSource}
-            className="rounded-md h-full object-cover"
-          />
-        </div>
+      </div>
+      <div className="w-full flex justify-center">
+        {cats.length == 0 ? <span>No Cats!</span> : null}
       </div>
     </GenericPage>
   );

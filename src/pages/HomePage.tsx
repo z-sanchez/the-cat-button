@@ -6,19 +6,18 @@ import { LiaSuitcaseSolid } from "react-icons/lia";
 import { FaHeart } from "react-icons/fa";
 import { IoBookOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
-import mockedCats from "../mockData/cats.json";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Cat } from "../types/Cat";
 import { UseCatStore } from "../state/useCatsStore";
 import { MdOutlineCollectionsBookmark } from "react-icons/md";
 import { Link } from "react-router";
 import { useSwipeable } from "react-swipeable";
+import { getCat } from "../utils/temp";
 
 export const Homepage = () => {
   const { addCat, cats, removeCat } = UseCatStore((state) => state);
   const [expanded, setExpanded] = useState(false);
-  const cat = mockedCats.cats[0] as Cat;
+  const [cat, setCat] = useState(getCat());
   const { imageSource, name, age, occupation, hobby, origin, backstory } = cat;
   const isCatInStorage = cats.some(({ id }) => id === cat.id);
 
@@ -41,7 +40,10 @@ export const Homepage = () => {
   return (
     <GenericPage hideOverflow={true}>
       <div className="w-full relative z-50 top-[90%]">
-        <div className="w-full absolute top-full">
+        <div
+          className="w-full absolute top-full"
+          onClick={() => setCat(getCat())}
+        >
           <TheCatButton />
         </div>
       </div>

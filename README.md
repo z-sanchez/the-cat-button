@@ -47,10 +47,10 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 ### Week 1: Frontend Setup
 
 - [x] Vite + Tailwind + Zustand + TypeScript scaffold
-- [ ] Home UI with Cat Button
-- [ ] Zustand store for `currentCat` and `savedCats`
-- [ ] Save cats to localStorage
-- [ ] CatCard component with placeholder data
+- [x] Home UI with Cat Button
+- [x] Zustand store for `currentCat` and `savedCats`
+- [x] Save cats to localStorage
+- [x] CatCard component with placeholder data
 
 ---
 

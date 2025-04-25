@@ -6,9 +6,49 @@
       "name": "Sir Whiskerbottom the Third",
       "age": 9,
       "occupation": "Senior Nap Consultant",
-      "hobby": "Meowsterdam",
+      "hobby": "Box Sitting",
       "origin": "Meowsterdam",
       "backstory": "Sir Whiskerbottom III was once the esteemed feline of an eccentric scholar who lived in a towering library. Over the years, he developed a taste for fine literature (mostly sleeping on open books) and a talent for finding the coziest sunspots."
+    },
+    {
+      "id": 1,
+      "imageSource": "https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Professor Puddingpaws",
+      "age": 6,
+      "occupation": "Full-Time Window Watcher",
+      "hobby": "Birdwatching (and judging)",
+      "origin": "Whiskerton University",
+      "backstory": "Graduating top of his class in Laziness and Lounging, Professor Puddingpaws spends his days peering thoughtfully out of windows, offering silent critiques to every pigeon that dares enter his sightline. He dreams of one day catching the Red Dot."
+    },
+    {
+      "id": 2,
+      "imageSource": "https://images.unsplash.com/photo-1516280030429-27679b3dc9cf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Captain Marmalade",
+      "age": 4,
+      "occupation": "Explorer of Forbidden Closets",
+      "hobby": "Treasure hunts (for socks)",
+      "origin": "The Wild Rugs of Livingrooma",
+      "backstory": "Born under a crooked coffee table, Captain Marmalade has always had a thirst for adventure. From scaling laundry mountains to disappearing into mysterious closets, he carries a single mission: find all lost socks and claim them as trophies."
+    },
+    {
+      "id": 3,
+      "imageSource": "https://images.unsplash.com/photo-1548546738-8509cb246ed3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Madam Fluffernoodle",
+      "age": 11,
+      "occupation": "Professional Blanket Critic",
+      "hobby": "Whisker grooming competitions",
+      "origin": "Velvet Valley Retirement Home",
+      "backstory": "A retired champion of the Whisker Grooming Circuit, Madam Fluffernoodle now devotes her days to seeking out the softest, warmest blankets. If your lap doesn't meet her standards, she will politely reposition herself elsewhere without hesitation."
+    },
+    {
+      "id": 4,
+      "imageSource": "https://images.unsplash.com/photo-1552933529-e359b2477252?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Detective Tater Tot",
+      "age": 2,
+      "occupation": "Mysterious Noise Investigator",
+      "hobby": "Interrogating shadows",
+      "origin": "The Kitchen Alleyways",
+      "backstory": "Whenever a thud, creak, or clatter occurs, Detective Tater Tot is hot on the case. With his trusty magnifying stare and lightning-fast paw taps, he unravels household mysteries — often revealing them to be...absolutely nothing. Still, he takes no chances."
     }
   ]
 }
