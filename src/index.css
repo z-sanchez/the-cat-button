@@ -19,6 +19,8 @@ html,
 body,
 #root {
   height: 100dvh;
+  overscroll-behavior: none; /* prevent elastic scroll */
+  touch-action: none; /* disable unwanted browser gestures */
 }
 
 a {
