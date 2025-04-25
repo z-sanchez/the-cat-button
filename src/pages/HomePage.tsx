@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Cat } from "../types/Cat";
 import { UseCatStore } from "../state/useCatsStore";
 import { MdOutlineCollectionsBookmark } from "react-icons/md";
+import { Link } from "react-router";
 
 export const Homepage = () => {
   const { addCat, cats, removeCat } = UseCatStore((state) => state);
@@ -25,7 +26,7 @@ export const Homepage = () => {
   const bounce = 0;
 
   return (
-    <GenericPage>
+    <GenericPage hideOverflow={true}>
       <div className="w-full relative z-50 top-[90%]">
         <div className="w-full absolute top-full">
           <TheCatButton />
@@ -38,9 +39,9 @@ export const Homepage = () => {
         transition={{ type, bounce }}
       >
         <div className="mb-4 flex justify-end w-full">
-          <span className="ml-auto mx-2">
-            <MdOutlineCollectionsBookmark className="w-6 h-6" />
-          </span>
+          <Link to="/collection" className="ml-auto mx-2">
+            <MdOutlineCollectionsBookmark className="w-6 h-6" fill="black" />
+          </Link>
         </div>
         <div className={`w-11/12 h-full relative transition-all ease-in-out`}>
           <div className="relative h-4/6">
