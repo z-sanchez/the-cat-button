@@ -23,6 +23,11 @@ body,
   touch-action: none; /* disable unwanted browser gestures */
 }
 
+.scrollable {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

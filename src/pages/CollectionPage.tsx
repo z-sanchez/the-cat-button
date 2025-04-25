@@ -7,7 +7,7 @@ export const CollectionPage = () => {
   const { cats } = UseCatStore((state) => state);
 
   return (
-    <GenericPage>
+    <GenericPage scrollable={true}>
       <div className="mb-4 flex justify-start w-full">
         <Link to="/" className="mx-2">
           <IoMdArrowRoundBack className="w-6 h-6" fill="black" />
