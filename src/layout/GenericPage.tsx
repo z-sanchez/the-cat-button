@@ -15,7 +15,7 @@ export const GenericPage = ({
       {...otherProps}
       className={`w-screen h-screen py-5 sm:py-20 px-2 ${
         hideOverflow ? "overflow-hidden" : ""
-      } ${scrollable ? ".scrollable" : ""}`}
+      } ${scrollable ? "scrollable" : ""}`}
     >
       {children}
     </div>
