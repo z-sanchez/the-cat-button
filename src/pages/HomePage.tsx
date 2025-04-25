@@ -11,6 +11,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Cat } from "../types/Cat";
 import { UseCatStore } from "../state/useCatsStore";
+import { MdOutlineCollectionsBookmark } from "react-icons/md";
 
 export const Homepage = () => {
   const { addCat, cats, removeCat } = UseCatStore((state) => state);
@@ -25,9 +26,6 @@ export const Homepage = () => {
 
   return (
     <GenericPage>
-      <div className="mb-4 flex justify-end mx-2">
-        <span className="ml-auto">Saved Cats</span>
-      </div>
       <div className="w-full relative z-50 top-[90%]">
         <div className="w-full absolute top-full">
           <TheCatButton />
@@ -39,6 +37,11 @@ export const Homepage = () => {
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
+        <div className="mb-4 flex justify-end  w-full">
+          <span className="ml-auto mx-2">
+            <MdOutlineCollectionsBookmark className="w-6 h-6" />
+          </span>
+        </div>
         <div className={`w-11/12 h-full relative transition-all ease-in-out`}>
           <div className="relative h-4/6">
             <img src={imageSource} className="rounded-md h-full object-cover" />
