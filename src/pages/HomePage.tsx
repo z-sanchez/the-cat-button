@@ -20,7 +20,7 @@ export const Homepage = () => {
   const { imageSource, name, age, occupation, hobby, origin, backstory } = cat;
   const isCatInStorage = cats.some(({ id }) => id === cat.id);
 
-  const animateY = "-50%";
+  const animateY = "-55%";
   const type = "spring";
   const bounce = 0;
 
@@ -37,7 +37,7 @@ export const Homepage = () => {
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
-        <div className="mb-4 flex justify-end  w-full">
+        <div className="mb-4 flex justify-end w-full">
           <span className="ml-auto mx-2">
             <MdOutlineCollectionsBookmark className="w-6 h-6" />
           </span>
