@@ -34,7 +34,6 @@ export const Homepage = () => {
       </div>
       <motion.div
         className="h-screen w-full flex items-center flex-col z-10"
-        onTap={() => setExpanded((prev) => !prev)}
         animate={{ y: expanded ? animateY : "0%" }}
         transition={{ type, bounce }}
       >
@@ -43,7 +42,10 @@ export const Homepage = () => {
             <MdOutlineCollectionsBookmark className="w-6 h-6" fill="black" />
           </Link>
         </div>
-        <div className={`w-11/12 h-full relative transition-all ease-in-out`}>
+        <div
+          className={`w-11/12 h-full relative transition-all ease-in-out`}
+          onClick={() => setExpanded((prev) => !prev)}
+        >
           <div className="relative h-4/6">
             <img src={imageSource} className="rounded-md h-full object-cover" />
             <p className="absolute bottom-2 right-2 rounded-md px-3 py-1 font-medium bg-yellow-400  text-white">
@@ -60,9 +62,8 @@ export const Homepage = () => {
         className={`h-screen w-full z-10 opacity-0 transition-opacity duration-500 ease-in-out ${
           expanded ? "opacity-100" : ""
         }`}
-        // onTap={() => setExpanded(false)}
         onPanEnd={(_, info) => {
-          if (info.offset.y < -100) setExpanded(true); // swipe up
+          if (info.offset.y < 100) setExpanded(true); // swipe up
         }}
         animate={{ y: expanded ? "-70%" : "0%" }}
         transition={{ type, bounce }}
