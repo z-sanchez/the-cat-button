@@ -3,7 +3,7 @@ import mockedAppData from "../mockData/cats.json";
 
 export const getCat = (): Cat => {
   const catsLength = mockedAppData.cats.length;
-  const randomIndex = Math.floor(Math.random() * (catsLength - 1));
+  const randomIndex = Math.floor(Math.random() * catsLength);
 
   return mockedAppData.cats[randomIndex] as Cat;
 };
