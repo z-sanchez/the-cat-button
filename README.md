@@ -56,7 +56,7 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 ### Week 2: Backend + DB
 
-- [ ] Setup Express server
+- [x] Setup Express server
 - [ ] Connect to MongoDB (Atlas or self-hosted)
 - [ ] Build `/api/cats` endpoint (generation logic)
 - [ ] ChatGPT & Unsplash integration
@@ -76,8 +76,8 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 ### Week 4: Deployment
 
-- [ ] Deploy frontend to DigitalOcean
-- [ ] Deploy backend to AWS (EC2 or ECS)
+- [x] Deploy frontend to DigitalOcean
+- [x] Deploy backend to AWS (EC2 or ECS)
 - [ ] Secure backend routes with environment variables
 - [ ] Confirm MongoDB connection works in prod
 
