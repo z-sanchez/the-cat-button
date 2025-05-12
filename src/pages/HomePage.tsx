@@ -7,17 +7,30 @@ import { FaHeart } from "react-icons/fa";
 import { IoBookOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { UseCatStore } from "../state/useCatsStore";
 import { MdOutlineCollectionsBookmark } from "react-icons/md";
 import { Link } from "react-router";
 import { useSwipeable } from "react-swipeable";
 import { getCat } from "../utils/temp";
+import axios from "axios";
+import { Cat } from "../types/Cat";
 
 export const Homepage = () => {
   const { addCat, cats, removeCat } = UseCatStore((state) => state);
   const [expanded, setExpanded] = useState(false);
-  const [cat, setCat] = useState(getCat());
+  const hasFetched = useRef(false);
+  const [cat, setCat] = useState<Cat>({
+    imageSource: "",
+    name: "",
+    age: 0,
+    occupation: "",
+    hobby: "",
+    origin: "",
+    backstory: "",
+    id: 0,
+  });
+
   const { imageSource, name, age, occupation, hobby, origin, backstory } = cat;
   const isCatInStorage = cats.some(({ id }) => id === cat.id);
 
@@ -32,6 +45,16 @@ export const Homepage = () => {
       setExpanded(false);
     },
   });
+
+  useEffect(() => {
+    if (cat.id === 0 && !hasFetched.current) {
+      hasFetched.current = true;
+      axios
+        .get("http://localhost:3000/api/cats/")
+        .then((response) => setCat(response.data))
+        .catch((err) => console.log(err));
+    }
+  }, [cat]);
 
   const animateY = "-55%";
   const type = "spring";
