@@ -67,7 +67,7 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 ### Week 3: Integration + PWA
 
-- [ ] Connect frontend to backend
+- [x] Connect frontend to backend
 - [ ] Fetch and display real cat data
 - [ ] VitePWA setup for install prompt & offline mode
 - [ ] Polish UI interactions & state handling
@@ -78,7 +78,7 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 - [x] Deploy frontend to DigitalOcean
 - [x] Deploy backend to AWS (EC2 or ECS)
-- [ ] Secure backend routes with environment variables
+- [x] Secure backend routes with environment variables
 - [x] Confirm MongoDB connection works in prod
 
 ---
