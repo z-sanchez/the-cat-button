@@ -1,7 +1,6 @@
-import "./App.css";
 import { usePwaServiceWorker } from "./hooks/usePwa";
 import { CollectionPage } from "./pages/CollectionPage";
-import { ConstructionPage } from "./pages/ConstructionPage";
+// import { ConstructionPage } from "./pages/ConstructionPage";
 import { Homepage } from "./pages/HomePage";
 import { Route, Routes } from "react-router";
 
@@ -11,7 +10,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Homepage />}></Route>
-      <Route path="/construction" element={<ConstructionPage />}></Route>
+      {/* <Route path="/construction" element={<ConstructionPage />}></Route> */}
       <Route path="/collection" element={<CollectionPage />}></Route>
     </Routes>
   );

@@ -58,9 +58,9 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 - [x] Setup Express server
 - [x] Connect to MongoDB (Atlas or self-hosted)
-- [ ] Build `/api/cats` endpoint (generation logic)
-- [ ] ChatGPT & Unsplash integration
-- [ ] Store cat object in DB
+- [x] Build `/api/cats` endpoint (generation logic)
+- [x] ChatGPT & Unsplash integration
+- [x] Store cat object in DB
 - [ ] `/api/image` returns centered cat image using `sharp`
 
 ---
