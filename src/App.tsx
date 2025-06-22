@@ -1,7 +1,7 @@
 import { usePwaServiceWorker } from "./hooks/usePwa";
 import { CollectionPage } from "./pages/CollectionPage";
 // import { ConstructionPage } from "./pages/ConstructionPage";
-import { Homepage } from "./pages/HomePage";
+import { Homepage } from "./pages/HomePage/HomePage";
 import { Route, Routes } from "react-router";
 
 function App() {
