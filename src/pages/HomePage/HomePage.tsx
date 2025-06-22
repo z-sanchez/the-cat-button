@@ -1,7 +1,6 @@
 import { GenericPage } from "../../layout/GenericPage";
-
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { UseCatStore } from "../../state/useCatsStore";
 import { MdOutlineCollectionsBookmark } from "react-icons/md";
 import { Link } from "react-router";
@@ -21,14 +20,11 @@ import { Rarity } from "../../types/Rarity";
 export const Homepage = () => {
   const { addCat, cats, removeCat } = UseCatStore((state) => state);
   const [expanded, setExpanded] = useState(false);
-  const hasFetched = useRef(false);
   const [cat, setCat] = useState<Cat>(DEFAULT_DISPLAY_CAT);
   const [loading, setLoading] = useState(false);
 
   const { imageSource, name, age, occupation, hobby, origin, backstory } = cat;
   const isCatInStorage = cats.some(({ id }) => id === cat.id);
-
-  console.log({ cat });
 
   const handleUp = useSwipeable({
     onSwipedUp: () => {
@@ -42,25 +38,32 @@ export const Homepage = () => {
     },
   });
 
-  useEffect(() => {
-    if (cat.id === 0 && !hasFetched.current) {
-      hasFetched.current = true;
-      setLoading(true);
-      axios
-        .get(import.meta.env.VITE_CAT_BUTTON_API)
-        .then((response) => {
-          setCat({ ...response.data, id: response.data._id });
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.log({ error });
-          console.log("Setting false");
+  const loadCats = () => {
+    setLoading(true);
 
-          setCat({ ...mockedCatResponse.cats[0] });
-          setLoading(false);
-        });
+    if (import.meta.env.VITE_USE_MOCK_DATA === "true") {
+      console.log("Fetching mock data cat");
+      setCat({ ...mockedCatResponse.cats[0] });
+      setLoading(false);
+      return;
     }
-  }, [cat]);
+
+    axios
+      .get(import.meta.env.VITE_CAT_BUTTON_API)
+      .then((response) => {
+        setCat({ ...response.data, id: response.data._id });
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log({ error });
+      });
+  };
+
+  useEffect(() => {
+    if (cat.id === 0) {
+      loadCats();
+    }
+  }, [cat.id]);
 
   const animateY = "-55%";
   const type = "spring";
