@@ -28,33 +28,36 @@ export const Bio = ({
       <div className="flex items-center pb-1">
         <CiClock1 fill="#eab308" className="h-5 w-5" />
         <p className="px-2">
-          Age: {age} {age == 1 ? "Year" : "Years"}
+          {!isNaN(age)
+            ? ` Age: ${age} ${age == 1 ? "Year" : "Years"}`
+            : "Age: ???"}
         </p>
       </div>
 
       <div className="flex items-center pb-1">
         <LiaSuitcaseSolid fill="#f97316" className="h-5 w-5" />
-        <p className="px-2">Occupation: {occupation}</p>
+        <p className="px-2">Occupation: {occupation ?? "???"}</p>
       </div>
 
       <div className="flex items-center pb-1">
         <IoBookOutline stroke="#3b82f6" className="h-5 w-5" />
-        <p className="px-2">Hobby: {hobby}</p>
+        <p className="px-2">Hobby: {hobby ?? "???"}</p>
       </div>
 
       <div className="flex items-center pb-1">
         <FiMapPin stroke="#ef4444" className="h-5 w-5" />
-        <p className="px-2">Origin: {origin}</p>
+        <p className="px-2">Origin: {origin ?? "???"}</p>
       </div>
 
       <div className="my-4 bg-white rounded-md px-4 ">
         <p className="text-lg font-semibold text-black">Backstory</p>
-        <p className="text-gray-700 text-sm">{backstory}</p>
+        <p className="text-gray-700 text-sm backstory">{backstory ?? "???"}</p>
       </div>
 
       <div
         className="flex items-center justify-start my-10"
         onClick={toggleFavorite}
+        data-testid="favorite-btn"
       >
         <FaHeart
           fill={isCatInStorage ? "#ef4444" : "white"}

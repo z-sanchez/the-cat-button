@@ -1,6 +1,6 @@
 import { GenericPage } from "../../layout/GenericPage";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { UseCatStore } from "../../state/useCatsStore";
 import { MdOutlineCollectionsBookmark } from "react-icons/md";
 import { Link } from "react-router";
@@ -10,18 +10,20 @@ import axios from "axios";
 import { Cat } from "../../types/Cat";
 import { DEFAULT_DISPLAY_CAT } from "../../utils/constants";
 import mockedCatResponse from "../../mockData/cats.json";
-import { ProfileImage } from "./subcomponents/ProfileImage";
+import { CatImage } from "./subcomponents/CatImage";
 import { NameTag } from "./subcomponents/NameTag";
 import { Spinner } from "../../components/Spinner";
 import { ButtonContainer } from "./subcomponents/ButtonContainer";
 import { Bio } from "./subcomponents/Bio";
 import { Rarity } from "../../types/Rarity";
+import { useNotification } from "../../hooks/useNotification";
 
 export const Homepage = () => {
   const { addCat, cats, removeCat } = UseCatStore((state) => state);
   const [expanded, setExpanded] = useState(false);
   const [cat, setCat] = useState<Cat>(DEFAULT_DISPLAY_CAT);
   const [loading, setLoading] = useState(false);
+  const { setError } = useNotification();
 
   const { imageSource, name, age, occupation, hobby, origin, backstory } = cat;
   const isCatInStorage = cats.some(({ id }) => id === cat.id);
@@ -38,7 +40,7 @@ export const Homepage = () => {
     },
   });
 
-  const loadCats = () => {
+  const loadCats = useCallback(() => {
     setLoading(true);
 
     if (import.meta.env.VITE_USE_MOCK_DATA === "true") {
@@ -55,15 +57,17 @@ export const Homepage = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.log({ error });
+        console.log("error", error);
+        setError({ show: true, message: error.message });
+        setLoading(false);
       });
-  };
+  }, [setError]);
 
   useEffect(() => {
     if (cat.id === 0) {
       loadCats();
     }
-  }, [cat.id]);
+  }, [cat.id, loadCats]);
 
   const animateY = "-55%";
   const type = "spring";
@@ -94,7 +98,7 @@ export const Homepage = () => {
             {...handleUp}
             onClick={() => setExpanded((prev) => !prev)}
           >
-            <ProfileImage imageSource={imageSource} rarityTag={Rarity.common} />
+            <CatImage imageSource={imageSource} rarityTag={Rarity.common} />
             <NameTag name={name} />
           </div>
         )}
