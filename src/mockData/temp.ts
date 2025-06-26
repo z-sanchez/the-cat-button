@@ -1,5 +1,5 @@
 import { Cat } from "../types/Cat";
-import mockedAppData from "../mockData/cats.json";
+import mockedAppData from "./cats.json";
 
 export const getCat = (): Cat => {
   const catsLength = mockedAppData.cats.length;

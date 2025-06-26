@@ -57,17 +57,17 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 ### Week 2: Backend + DB
 
 - [x] Setup Express server
-- [ ] Connect to MongoDB (Atlas or self-hosted)
-- [ ] Build `/api/cats` endpoint (generation logic)
-- [ ] ChatGPT & Unsplash integration
-- [ ] Store cat object in DB
+- [x] Connect to MongoDB (Atlas or self-hosted)
+- [x] Build `/api/cats` endpoint (generation logic)
+- [x] ChatGPT & Unsplash integration
+- [x] Store cat object in DB
 - [ ] `/api/image` returns centered cat image using `sharp`
 
 ---
 
 ### Week 3: Integration + PWA
 
-- [ ] Connect frontend to backend
+- [x] Connect frontend to backend
 - [ ] Fetch and display real cat data
 - [ ] VitePWA setup for install prompt & offline mode
 - [ ] Polish UI interactions & state handling
@@ -78,8 +78,8 @@ A Progressive Web App where users press a button to receive a unique cat with a 
 
 - [x] Deploy frontend to DigitalOcean
 - [x] Deploy backend to AWS (EC2 or ECS)
-- [ ] Secure backend routes with environment variables
-- [ ] Confirm MongoDB connection works in prod
+- [x] Secure backend routes with environment variables
+- [x] Confirm MongoDB connection works in prod
 
 ---
 
